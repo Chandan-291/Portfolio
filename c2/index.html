@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Watch Haven</title>
+  <style>
+    /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+
+body {
+  background-color: #070e16; 
+  color: #fff; 
+}
+
+
+header {
+  background-color: #070e16;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin-right: 50px;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff0000; 
+}
+
+.hero {
+  background-image: url('watch_image/watch1.webp');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 4%;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: white;
+  color: #e60000;
+}
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background-color: #070e16;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 50px;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.about .btn {
+  display: inline-block;
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.about .btn:hover {
+  background-color: white;
+  color: #e60000;
+}
+
+.about-image {
+  flex: 1;
+  margin-left: 50px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+
+.collection {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #070e16;
+}
+
+.collection h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #ffffff;
+}
+
+.collection-items {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.collection-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.collection-item:hover {
+  transform: translateY(-10px);
+}
+
+.collection-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.collection-item h3 {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.collection-item p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 0;
+}
+
+
+.new-arrivals {
+  background-color: #070e16;
+  padding: 80px 20px;
+  color: #fff;
+
+}
+.new-arrival-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.new-arrival-images {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.new-arrival-item {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 300px;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.new-arrival-item:hover {
+  transform: translateY(-10px);
+}
+
+.new-arrival-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.new-arrival-item h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.new-arrival-item p {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 0;
+}
+
+.contact {
+  background-color: #333;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.info-item {
+  margin: 0 20px;
+  text-align: center;
+}
+
+.info-item i {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  display: inline-block;
+  background-color: #ff0000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #e60000;
+}
+
+.footer {
+  background-color: #070e16;
+  padding: 40px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-links a:hover {
+  color: #ff0000;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image {
+    margin-left: 0;
+    margin-top: 30px;
+  }
+
+  .collection-items,
+  .new-arrival-images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .collection-item,
+  .new-arrival-item {
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="watch_image\watchlogo.png " alt="Watch Haven Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#new-arrivals">New Arrivals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Watch Haven</h1>
+      <p>Your destination for luxury and timeless watches</p>
+      <a href="#collection" class="btn">Explore Our Collection</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about dark-theme" id="about">
+    <div class="about-content">
+      <h2>About Watch Haven</h2>
+      <p>At Watch Haven, we bring you the finest selection of luxury timepieces. From iconic brands to innovative designs, we offer watches that transcend time.</p>
+      <p>Each watch in our collection is a masterpiece, meticulously crafted with precision and style. Whether you're a watch connoisseur or just looking for the perfect timepiece, you'll find it at Watch Haven.</p>
+      <a href="#collection" class="btn">Explore Our Collection</a>
+    </div>
+    
+    <div class="about-image">
+      <img src="watch_image/watch2.webp" alt="About Watch Image">
+    </div>
+  </section>
+
+  <!-- Watch Collection Section -->
+  <section id="collection" class="collection">
+    <h2>Our Collection</h2>
+    <div class="collection-items">
+      <div class="collection-item">
+        <img src="watch_image\watch4.jpg" alt="Luxury Watch 1">
+        <h3>Classic Luxury Watch</h3>
+        <p>Elegance meets precision. A timeless piece that complements every occasion.</p>
+      </div>
+      <div class="collection-item">
+        <img src="watch_image/watch3.webp" alt="Sports Watch 1">
+        <h3>Sporty Chronograph</h3>
+        <p>A high-performance timepiece designed for active lifestyles and precision timing.</p>
+      </div>
+      <div class="collection-item">
+        <img src="watch_image\watch5.jpg " alt="Smart Watch 1">
+        <h3>Smart Watch Series</h3>
+        <p>Stay connected and stylish with our latest smartwatches, combining technology with elegance.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Arrivals Section -->
+  <section id="new-arrivals" class="new-arrivals dark-theme">
+
+    <div class="new-arrival-content">
+        <h2>New Arrivals</h2>
+            </div>
+
+    <div class="new-arrival-images">
+        <div class="new-arrival-item">
+            <img src="watch_image/watch6.jpeg" alt="New Arrival Watch 1">
+            <h3>Limited Edition Watch</h3>
+            <p>Our latest limited edition timepiece with exquisite craftsmanship.</p>
+        </div>
+        <div class="new-arrival-item">
+            <img src="watch_image/watch9.webp" alt="New Arrival Smartwatch 1">
+            <h3>Next-Gen Smartwatch</h3>
+            <p>Experience the future of wearable technology with our advanced smartwatch series.</p>
+        </div>
+        <div class="new-arrival-item">
+            <img src="watch_image/watch9.webp" alt="New Arrival Smartwatch 1">
+            <h3>New Luxury</h3>
+            <p>Experience the future of wearable luxury with our mordern antique series.</p>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Watch Street, City, Country</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-phone-alt"></i>
+          <p>+1 234 567 890</p>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i>
+          <p>info@watchhaven.com</p>
+        </div>
+      </div>
+      <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="watch_image\watchlogo.png" alt="Watch Haven Logo">
+      </div>
+      <nav class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Collection</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    <p class="footer-text">&copy; 2024 Watch Haven. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
